@@ -14,12 +14,13 @@ function callApi(uri, callback){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:
+            console.log(data);
             callback(data)
         }
     };
     
     xhttp.open("GET", uri, true);
-    xhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://cyber-city-comics-oleh.herokuapp.com/');
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhttp.setRequestHeader('Access-Control-Allow-Credentials', true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
     
@@ -35,5 +36,5 @@ function fillData(data){
 }
 
 function home(){
-    callApi("https://xkcd.com/info.0.json", fillData);
+    callApi("https://cyber-city-comics-oleh.herokuapp.com/api.php?num=0", fillData);
 }
