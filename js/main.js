@@ -17,7 +17,9 @@ function callApi(uri, callback){
             callback(data)
         }
     };
+    
     xhttp.open("GET", uri, true);
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhttp.send();
 
 }
