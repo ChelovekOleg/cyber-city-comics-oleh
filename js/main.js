@@ -20,6 +20,8 @@ function callApi(uri, callback){
     
     xhttp.open("GET", uri, true);
     xhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://cyber-city-comics-oleh.herokuapp.com/');
+    xhttp.setRequestHeader('Access-Control-Allow-Credentials', true);
+    
     xhttp.send();
 
 }
